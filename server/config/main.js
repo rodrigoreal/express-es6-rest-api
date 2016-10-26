@@ -8,8 +8,8 @@ const env = process.env.UNIVERSO_ENVIRONMENT;
  * @return {JSON} The configuration JSON
  */
 function getConfig() {
-  var config = {};
-  var confFile = './server/config/' + env + '.json';
+  let config = {};
+  const confFile = `./server/config/${env}.json`;
 
   console.log(colors.yellow('[conf.get.readConfig]'), env);
   try {
@@ -25,4 +25,4 @@ function getConfig() {
   return config;
 }
 
-module.exports = getConfig();
+export default getConfig();
