@@ -1,5 +1,5 @@
-import fs from 'fs';
-import colors from 'colors';
+const fs = require('fs');
+const colors = require('colors');
 
 const env = process.env.UNIVERSO_ENVIRONMENT;
 
@@ -9,7 +9,7 @@ const env = process.env.UNIVERSO_ENVIRONMENT;
  */
 function getConfig() {
   let config = {};
-  const confFile = `./server/config/${env}.json`;
+  const confFile = `./config/${env}.json`;
 
   console.log(colors.yellow('[conf.get.readConfig]'), env);
   try {
@@ -25,4 +25,4 @@ function getConfig() {
   return config;
 }
 
-export default getConfig();
+module.exports = getConfig();

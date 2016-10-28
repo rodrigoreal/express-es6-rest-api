@@ -1,6 +1,7 @@
-import UserModel from '../models/user';
+const UserModel = require('../models/user');
 
 function find(req, res) {
+  req.io.sockets.emit('daia', { data: 'taiga' });
   res.status(500).send({
     error: 'error',
     description: 'description',
@@ -18,4 +19,4 @@ function create(req, res) {
   });
 }
 
-export default { find, create };
+module.exports = { find, create };

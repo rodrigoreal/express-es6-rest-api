@@ -1,5 +1,5 @@
-import express from 'express';
-import user from '../controllers/user';
+const express = require('express');
+const user = require('../controllers/user');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -8,4 +8,4 @@ router.route('/')
   .get((req, res) => user.find(req, res))
   .post((req, res) => user.create(req, res));
 
-export default router;
+module.exports = router;
